@@ -1,0 +1,33 @@
+.card {
+  width: 400px;
+  height: 600px;
+  border: 1px solid grey;
+  border-radius: 25px;
+  margin: 100px auto;
+  background-color: #eaeaea;
+}
+
+.card img {
+  width: 400px;
+  height: 200px;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+}
+
+.card-content {
+  padding: 20px 30px;
+}
+
+.card-content h1 {
+  font-size: 32px;
+  text-transform: uppercase;
+  color: rgb(168, 168, 168);
+}
+
+.card-content h3 {
+  color: rgb(107, 107, 107);
+}
+
+.card:hover {
+  background-color: beige;
+}
