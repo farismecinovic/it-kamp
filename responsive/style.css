@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.item {
+  width: 75px;
+  height: 75px;
+  margin: 15px;
+  background-color: pink;
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    flex-direction: column;
+  }
+  .item {
+    background-color: indigo;
+  }
+}

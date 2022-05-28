@@ -1,0 +1,130 @@
+.relative {
+  width: 400px;
+  height: 600px;
+  background-color: green;
+  border: 3px solid black;
+  margin: auto;
+  margin-top: 40px;
+  position: relative;
+  margin-bottom: 40px;
+}
+h1 {
+  text-align: center;
+}
+.absolute1 {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-color: black;
+  border-radius: 50%;
+  color: red;
+  top: -20px;
+  bottom: 0;
+  right: 0;
+  left: -20px;
+  text-align: center;
+  border: 3px solid orange;
+}
+.absolute2 {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-color: black;
+  border-radius: 50%;
+  color: red;
+  top: 300px;
+  bottom: 0;
+  right: 0;
+  left: -20px;
+  text-align: center;
+  border: 3px solid orange;
+}
+.absolute3 {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-color: black;
+  border-radius: 50%;
+  color: red;
+  top: 580px;
+  bottom: 0;
+  right: 0;
+  left: -20px;
+  text-align: center;
+  border: 3px solid orange;
+}
+.absolute4 {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-color: black;
+  border-radius: 50%;
+  color: red;
+  top: -20px;
+  bottom: 0;
+  right: 0;
+  left: 380px;
+  text-align: center;
+  border: 3px solid orange;
+}
+.absolute5 {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-color: black;
+  border-radius: 50%;
+  color: red;
+  top: 300px;
+  bottom: 0;
+  right: 0;
+  left: 380px;
+  text-align: center;
+  border: 3px solid orange;
+}
+.absolute6 {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-color: black;
+  border-radius: 50%;
+  color: red;
+  top: 580px;
+  bottom: 0;
+  right: 0;
+  left: 380px;
+  text-align: center;
+  border: 3px solid orange;
+}
+.absolute7 {
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 50%;
+  color: red;
+  top: 300px;
+  bottom: 0;
+  right: 0;
+  left: 170px;
+  text-align: center;
+  border: 2px solid orange;
+}
+.stick {
+  position: absolute;
+  width: 450px;
+  height: 15px;
+  background-color: black;
+  border-top-right-radius: 30%;
+  border-top-left-radius: 0%;
+  border-bottom-left-radius: 0%;
+  border-bottom-right-radius: 30%;
+  /*border-radius: 15%;*/
+  color: red;
+  top: 300px;
+  bottom: 0;
+  left: 0;
+  border-right: 8px solid rgb(252, 0, 0);
+  border-left: 40px solid yellow;
+  text-align: center;
+  transform: rotate(120deg);
+}

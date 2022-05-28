@@ -1,0 +1,63 @@
+* {
+  margin: 0;
+}
+
+/* .flex {
+  display: flex;
+  width: 100%;
+  height: 500px;
+  background-color: rgb(33, 119, 195);
+}
+
+.unutar-flexa-prvi {
+  width: 25%;
+  height: 500px;
+  background-color: rgb(29, 116, 87);
+}
+
+.unutar-flexa-drugi {
+  width: 25%;
+  height: 500px;
+  background-color: rgb(100, 16, 155);
+}
+
+.unutar-flexa-treci {
+  width: 25%;
+  height: 500px;
+  background-color: rgb(69, 137, 44);
+}
+.unutar-flexa-cetvrti {
+  width: 25%;
+  height: 500px;
+  background-color: rgb(255, 102, 0);
+} */
+
+/* .vh-vw {
+  height: 100vh;
+  width: 50%;
+  background-color: chartreuse;
+}
+
+.nav {
+  height: 10vh;
+  background-color: blue;
+} */
+
+html {
+  font-size: 10px = 1rem;
+}
+
+h1 {
+  font-size: 6.5rem;
+}
+
+.em {
+  font-size: 100px;
+}
+
+.em span {
+  font-size: 1em;
+}
+p {
+  font-size: 1rem;
+}
