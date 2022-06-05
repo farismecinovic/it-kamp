@@ -1,70 +1,31 @@
-// const DATA1 = [2, 26, 38, 75, 11, 29];
-// const DATA2 = ["a", "b", "c", "d", "e"];
+// console.log(numbers.find((el) => el > 5));
+// console.log(numbers.findIndex((el) => el > 5));
 
-const mutateArrays = (array1, array2) => {
-  //1. DEO ZADATKA
-  const helper = array1.concat(array2);
+// console.log(numbers.every((el) => el > 5));
 
-  //2 DEO ZADATAKA
-  const parni = [];
+// console.log(numbers.some((el) => el > 5));
+// const numbers = [1, 4, 5, 7, 10, 15, 22, 29, 30, 50, 52];
 
-  for (const el of helper) {
-    if (el % 2 === 0) {
-      parni.push(el);
-    }
-  }
+// const evenNumbers = numbers.filter((num) => num % 2 === 0 && num < 30);
 
-  parni.unshift(10, 20);
+// const words = ["televizor", "telefon", "prozor", "daljinski", "sbb"];
 
-  //3 DEO ZADATKA
-  return [helper, parni];
-};
+// const newWords = words.filter((word) => word.length > 4);
+// console.log(newWords);
 
-// console.log(mutateArrays(DATA1, DATA2));
+const numbers = [9, 36, 100, 25, 64];
 
-//FILTER METODA
-// const words = ["televizor", "daljinski", "telefon", "voda", "ranac", "stolica"];
-// const numbers = [2, 8, 9, 11, 26, 85, 86, 90, 102, 1003, 1120];
-// const booleans = [true, false, true, false];
+// const noveCene = cene.map((el) => el + 50).filter((el) => el < 600);
 
-// const filteredArray = words
-//   .concat(numbers)
-//   .concat(booleans)
-//   .filter((el) => typeof el === "boolean");
+// const numsSqrt = numbers.map((num) => Math.sqrt(num));
 
-// console.log(filteredArray);
+const cene = [240, 520, 380, 525, 780];
 
-//MAP METODA
+console.log(cene.reduce((prevValue, currValue) => prevValue + currValue, 300));
 
-// const numbers = [2, 5, 3, 1, 10, 8, 7];
-
-// const squareNumbers = numbers.map((el, index, array) => {
-//   if (index === 0 || index === 3 || index === 5) {
-//     return el * el;
-//   }
-//   return el;
-// });
-
-// console.log(squareNumbers);
-
-const DATA1 = [1, 3, 4, 2, 7, 6];
-
-//el > 2 = el * 7
-// el > 2 && el < 8 = (el*4) / 2
-
-const dogAgeToHuman = (ages) => {
-  const humanAge = ages.map((age) => {
-    if (age > 2 && age < 8) {
-      return (age * 4) / 2;
-    } else if (age > 2) {
-      return age * 7;
-    } else {
-      return age;
-    }
-  });
-
-  const lessThan10HumanAge = humanAge.filter((el) => el < 10);
-  return [humanAge, lessThan10HumanAge];
-};
-
-console.log(dogAgeToHuman(DATA1));
+//1. prev: 0, current: 240;
+//2. prev: 240, current: 520;
+//3. prev: 760, current: 380;
+//4. prev: 1140, current: 525;
+//5. prev: 1665, current: 780;
+//6. prev: 2445: current: 0;
