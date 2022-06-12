@@ -1,31 +1,32 @@
-// console.log(numbers.find((el) => el > 5));
-// console.log(numbers.findIndex((el) => el > 5));
+// Auto, make,model,maxSpeed, currentSpeed, drive, brake, stop.
+// vozi - tretnutu brzinu za 20
+// koci - smanji brzinu za 10
+// stop - brzina 0
 
-// console.log(numbers.every((el) => el > 5));
+//160, i treba smanji brzinu do 120, i da stane
 
-// console.log(numbers.some((el) => el > 5));
-// const numbers = [1, 4, 5, 7, 10, 15, 22, 29, 30, 50, 52];
+const car = {
+  make: "Audi",
+  model: "a3",
+  maxSpeed: 220,
+  currentSpeed: 0,
+  drive: function (value) {
+    if (this.currentSpeed + value > this.maxSpeed) {
+      alert("Ide preko ogranicenja");
+    } else {
+      this.currentSpeed += value;
+    }
+  },
+  brake: function (value) {
+    this.currentSpeed -= value;
+  },
+  stop: function () {
+    this.currentSpeed = 0;
+  },
+};
 
-// const evenNumbers = numbers.filter((num) => num % 2 === 0 && num < 30);
+car.drive(180);
+car.drive(20);
+console.log(car);
 
-// const words = ["televizor", "telefon", "prozor", "daljinski", "sbb"];
-
-// const newWords = words.filter((word) => word.length > 4);
-// console.log(newWords);
-
-const numbers = [9, 36, 100, 25, 64];
-
-// const noveCene = cene.map((el) => el + 50).filter((el) => el < 600);
-
-// const numsSqrt = numbers.map((num) => Math.sqrt(num));
-
-const cene = [240, 520, 380, 525, 780];
-
-console.log(cene.reduce((prevValue, currValue) => prevValue + currValue, 300));
-
-//1. prev: 0, current: 240;
-//2. prev: 240, current: 520;
-//3. prev: 760, current: 380;
-//4. prev: 1140, current: 525;
-//5. prev: 1665, current: 780;
-//6. prev: 2445: current: 0;
+//currentSpeed: 110
