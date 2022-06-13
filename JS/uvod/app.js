@@ -1,32 +1,40 @@
-// Auto, make,model,maxSpeed, currentSpeed, drive, brake, stop.
-// vozi - tretnutu brzinu za 20
-// koci - smanji brzinu za 10
-// stop - brzina 0
+// const person = {
+//   name: "John Doe",
+//   age: 22,
+//   getFirstName: function () {
+//     console.log(this);
+//   },
+// };
 
-//160, i treba smanji brzinu do 120, i da stane
+// const car = {
+//   name: "Audi",
+// };
+// function sayHello() {
+//   console.log(`Hello ${this.name}`);
+// }
 
-const car = {
-  make: "Audi",
-  model: "a3",
-  maxSpeed: 220,
-  currentSpeed: 0,
-  drive: function (value) {
-    if (this.currentSpeed + value > this.maxSpeed) {
-      alert("Ide preko ogranicenja");
-    } else {
-      this.currentSpeed += value;
-    }
-  },
-  brake: function (value) {
-    this.currentSpeed -= value;
-  },
-  stop: function () {
-    this.currentSpeed = 0;
-  },
-};
+// sayHello.call(car);
 
-car.drive(180);
-car.drive(20);
-console.log(car);
+let hrana = { food: "Pizza" };
 
-//currentSpeed: 110
+function favFood(text, rating) {
+  return `${this.food} ${text} ${rating}`;
+}
+
+console.log(favFood.call(hrana, "je ukusna", 9));
+
+console.log(favFood.apply(hrana, ["nije ukusna", 6]));
+
+const bindFunc = favFood.bind(hrana);
+
+console.log(bindFunc("nije nesto", 9));
+
+const ime = "John doe";
+const zanimanje = "ubica";
+const godine = 40;
+
+console.log(`${ime} je ${zanimanje} i ima ${godine} godina`);
+
+const numArray = [10, 30, 50, 100, 200, 1000];
+
+console.log(Math.max.apply(null, numArray));
