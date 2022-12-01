@@ -1,0 +1,31 @@
+.kocka {
+  width: 500px;
+  height: 500px;
+  background-color: chartreuse;
+  text-align: center;
+}
+
+.drugaKocka {
+  width: 500px;
+  height: 500px;
+  background-color: #555555;
+  text-align: center;
+  color: white;
+}
+
+.drugaKocka p {
+  font-size: 20px;
+}
+
+.text {
+  font-size: 25px;
+  color: white;
+}
+
+.veci-font {
+  font-size: 50px;
+}
+
+.nevidljivo {
+  display: none;
+}

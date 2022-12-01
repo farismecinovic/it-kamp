@@ -1,40 +1,38 @@
-// const person = {
-//   name: "John Doe",
-//   age: 22,
-//   getFirstName: function () {
-//     console.log(this);
-//   },
-// };
+//document.getElementById(pocetak)
+//document.getElemenyByClassName(prva-klasa)
+//document.querySelector('#id')
+//document.querySelectorAll('#id')
+//document.getElementByTagName()
 
-// const car = {
-//   name: "Audi",
-// };
-// function sayHello() {
-//   console.log(`Hello ${this.name}`);
-// }
+const glavniDiv = document.querySelector("#pocetak");
+const body = document.querySelector("body");
 
-// sayHello.call(car);
+const paragraf = document.createElement("p");
+paragraf.textContent = "Ovo je p dodat iz JS"; //<p>Ovo je p dodat iz JS</p>
 
-let hrana = { food: "Pizza" };
+// glavniDiv.style.backgroundColor = "red"; //inline style
 
-function favFood(text, rating) {
-  return `${this.food} ${text} ${rating}`;
-}
+glavniDiv.classList.add("kocka"); // dodavanje klase
+paragraf.classList.add("text");
 
-console.log(favFood.call(hrana, "je ukusna", 9));
+const dugme = document.createElement("button");
+dugme.textContent = "Click me";
+glavniDiv.append(dugme);
 
-console.log(favFood.apply(hrana, ["nije ukusna", 6]));
+const onButtonClick = () => {
+  paragraf.classList.toggle("veci-font");
+  skriveniDiv.classList.toggle("nevidljivo");
+};
 
-const bindFunc = favFood.bind(hrana);
+dugme.addEventListener("click", onButtonClick);
 
-console.log(bindFunc("nije nesto", 9));
+glavniDiv.append(paragraf);
 
-const ime = "John doe";
-const zanimanje = "ubica";
-const godine = 40;
+const skriveniDiv = document.createElement("div");
+skriveniDiv.classList.add("drugaKocka");
+body.append(skriveniDiv);
 
-console.log(`${ime} je ${zanimanje} i ima ${godine} godina`);
-
-const numArray = [10, 30, 50, 100, 200, 1000];
-
-console.log(Math.max.apply(null, numArray));
+skriveniDiv.innerHTML = `
+<h1>Ovo je h1</h1>
+<p>Neka deskripcija</p>
+`;
