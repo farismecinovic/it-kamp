@@ -1,38 +1,73 @@
-//document.getElementById(pocetak)
-//document.getElemenyByClassName(prva-klasa)
-//document.querySelector('#id')
-//document.querySelectorAll('#id')
-//document.getElementByTagName()
+const usersTable = document.querySelector(".usersTable");
+const submitBtn = document.querySelector("#submit");
 
-const glavniDiv = document.querySelector("#pocetak");
-const body = document.querySelector("body");
+let users = [];
 
-const paragraf = document.createElement("p");
-paragraf.textContent = "Ovo je p dodat iz JS"; //<p>Ovo je p dodat iz JS</p>
-
-// glavniDiv.style.backgroundColor = "red"; //inline style
-
-glavniDiv.classList.add("kocka"); // dodavanje klase
-paragraf.classList.add("text");
-
-const dugme = document.createElement("button");
-dugme.textContent = "Click me";
-glavniDiv.append(dugme);
-
-const onButtonClick = () => {
-  paragraf.classList.toggle("veci-font");
-  skriveniDiv.classList.toggle("nevidljivo");
+const createUserFactory = (name, lastName, occupation) => {
+  return {
+    id: Math.random()
+      .toString(36)
+      .substring(2, 10 + 2),
+    name,
+    lastName,
+    occupation,
+  };
 };
 
-dugme.addEventListener("click", onButtonClick);
+const deleteUser = (userId) => {
+  const newUsers = users.filter((user) => user.id !== userId);
+  users = [...newUsers];
 
-glavniDiv.append(paragraf);
+  console.log("New Users", users);
+};
 
-const skriveniDiv = document.createElement("div");
-skriveniDiv.classList.add("drugaKocka");
-body.append(skriveniDiv);
+function dugmeFunction() {
+  let userName = document.querySelector("#name").value;
+  let lastName = document.querySelector("#lastName").value;
+  let occupation = document.querySelector("#occupation").value;
 
-skriveniDiv.innerHTML = `
-<h1>Ovo je h1</h1>
-<p>Neka deskripcija</p>
-`;
+  if (userName !== "" && lastName !== "" && occupation !== "") {
+    const user = createUserFactory(userName, lastName, occupation);
+    users.push(user);
+    renderUsers();
+    console.log("users", users);
+
+    document.querySelector("#name").value = "";
+    document.querySelector("#lastName").value = "";
+    document.querySelector("#occupation").value = "";
+  }
+}
+
+const renderUsers = () => {
+  const currentUser = users[users.length - 1];
+  //Creating new Row and Cells
+
+  const currentRow = document.createElement("tr");
+  const userNameCell = document.createElement("td");
+  const lastNameCell = document.createElement("td");
+  const occupationCell = document.createElement("td");
+  const actionCell = document.createElement("td");
+
+  actionCell.addEventListener("click", () => {
+    usersTable.removeChild(currentRow), deleteUser(currentUser.id);
+  });
+
+  // Appending Cells to created row
+  currentRow.appendChild(userNameCell);
+  currentRow.appendChild(lastNameCell);
+  currentRow.appendChild(occupationCell);
+  currentRow.appendChild(actionCell);
+
+  // Assinging text to created cells.
+  userNameCell.textContent = currentUser.name;
+  lastNameCell.textContent = currentUser.lastName;
+  occupationCell.textContent = currentUser.occupation;
+  actionCell.textContent = "X";
+  // Appending new row to table element in HTML
+  usersTable.appendChild(currentRow);
+};
+//Ocisti input
+//da se ne duplira ovo
+//Stilizovanje
+
+submitBtn.addEventListener("click", dugmeFunction);
