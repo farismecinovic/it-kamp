@@ -11,11 +11,33 @@ const QUESTIONS = [
     question: "Koliko minuta traje fudbalska utakmica?",
     answers: [45, 60, 90, 75, 120],
     correct_answer: 90,
-    points: 5,
+    points: 10,
+  },
+  {
+    id: 3,
+    question: "Koja se valuta koristi u Japanu?",
+    answers: ["Dinar", "Rublja", "Dolar", "Yen"],
+    correct_answer: "Yen",
+    points: 15,
+  },
+  {
+    id: 4,
+    question: "Glavni grad Kanade je?",
+    answers: ["Otava", "Kvebek", "Toronto", "Vankuver"],
+    correct_answer: "Otava",
+    points: 20,
+  },
+  {
+    id: 5,
+    question: "Najveci okean na svetu je?",
+    answers: ["Tihi", "Atlanski", "Indijski"],
+    correct_answer: "Tihi",
+    points: 1,
   },
 ];
 
 let CURRENT_POINTS = 0;
+let CURRENT_INDEX = 0;
 
 const maxPoints = QUESTIONS.reduce((prev, curr) => {
   return prev + curr.points;
@@ -27,7 +49,17 @@ const initializeQuiz = () => {
   const questionContainer = document.querySelector("#pitanje");
   const answersContainer = document.querySelector("#odgovori");
 
-  const question = QUESTIONS[1];
+  if (CURRENT_INDEX > QUESTIONS.length - 1) {
+    questionContainer.innerHTML = "";
+    answersContainer.style.display = "none";
+
+    questionContainer.textContent = `Cestitamo osvojili ste ${CURRENT_POINTS} od mogucih ${maxPoints}`;
+    `teskt ${9 % 3 === 0 ? "STA IMA" : "NEMA NISTA"}`;
+    return;
+  }
+  answersContainer.innerHTML = "";
+
+  const question = QUESTIONS[CURRENT_INDEX];
 
   questionContainer.textContent = question.question;
 
@@ -43,18 +75,16 @@ const initializeQuiz = () => {
   });
 };
 
-//Kada se funkcija okine, treba da prebaci na sledece pitanje
-//Ukoliko je dati odgovor tacan, dodati korisniku onoliko poena koliko to pitanje nosi,
-//Prebaciti na sledece pitanje, bilo da je odgovor tacan ili netacan
 const submitAnswer = (id, answer) => {
-  const question = QUESTIONS[0];
+  const question = QUESTIONS[CURRENT_INDEX];
 
   if (question.id === id) {
-    //Prebaci na sledece pitanje
-    if (question.correct_answer === answer) {
+    if (question.correct_answer.toString() === answer.toString()) {
       CURRENT_POINTS += question.points;
       console.log(CURRENT_POINTS);
     }
+    CURRENT_INDEX++;
+    initializeQuiz();
   }
 };
 
